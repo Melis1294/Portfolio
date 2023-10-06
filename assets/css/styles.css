@@ -3133,6 +3133,27 @@ input, select, textarea {
 	font-weight: 100;
 }
 
+.android {
+	/* background styles */
+	padding: 25px 50px;
+	display: block;
+	margin-top: 0.3em;
+	position: relative;
+	display: inline-block;
+	background-image: url("https://logos-world.net/wp-content/uploads/2020/12/Google-Play-icon-logo.png");  /* fallback for old browsers */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 65%;
+	background-blend-mode: multiply;
+
+	/* text styles */
+	text-decoration: none;
+	color: #fff;
+	font-size: 25px;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
 .apple {
 	/* background styles */
 	padding: 25px 50px;
