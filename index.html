@@ -15,12 +15,48 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="logo-link"><img src="./images/Vast LOGO_TRANSPARENT-00.png" alt="Vast Logo" class="nav-logo" /></a>
-    <ul>
+    
+    <input type="checkbox" id="menu-toggle" class="menu-toggle-cb" />
+    <label for="menu-toggle" class="burger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- Curtain menu for mobile navigation -->
+  <div class="curtain-menu">
+    <ul class="curtain-links">
+      <li><a href="#about" onclick="closeCurtainMenu()">About</a></li>
+      <li><a href="#projects" onclick="closeCurtainMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="closeCurtainMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- JavaScript to handle curtain menu toggle -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const curtainMenu = document.querySelector('.curtain-menu');
+
+    menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+        curtainMenu.style.display = 'flex';
+      } else {
+        curtainMenu.style.display = 'none';
+      }
+    });
+
+    function closeCurtainMenu() {
+      menuToggle.checked = false;
+      curtainMenu.style.display = 'none';
+    }
+  </script>
 
   <!-- HERO -->
   <section class="hero">

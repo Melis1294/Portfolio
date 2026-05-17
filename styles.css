@@ -59,7 +59,7 @@ body {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,6 +73,11 @@ nav {
 .nav-logo  { height: 38px; width: auto; display: block; }
 
 nav ul { list-style: none; display: flex; gap: 2.5rem; }
+
+/* Nav links — visible on desktop, hidden on mobile until toggled */
+.nav-links {
+  display: flex; /* visible by default on desktop */
+}
 
 nav a {
   text-decoration: none;
@@ -92,6 +97,30 @@ nav a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Burger Menu Styles ── */
+.menu-toggle-cb {
+  display: none;
+}
+
+.burger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.burger-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 }
 
 /* ── Hero ── */
@@ -645,7 +674,99 @@ footer {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-image img { aspect-ratio: 4 / 3; object-position: center 57%; }
   .projects-grid { grid-template-columns: 1fr; }
-  nav ul { gap: 1.2rem; }
+
+  .burger-btn {
+    display: flex;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 80px);
+    background-color: var(--bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    z-index: 1005;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    display: flex; /* always flex, controlled by transform/opacity/visibility */
+  }
+
+  /* Checked/Active state for burger trigger */
+  .menu-toggle-cb:checked ~ nav ul {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-toggle-cb:checked ~ .burger-btn span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle-cb:checked ~ .burger-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle-cb:checked ~ .burger-btn span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Curtain menu styles */
+.curtain-menu {
+  display: none;
+  position: fixed;
+  top: 7%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--surface);
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+}
+
+.curtain-links {
+  list-style: none;
+  padding: 3rem 0;
+  margin: 0;
+  text-align: center;
+}
+
+.curtain-links li {
+  margin: 1rem 0;
+}
+
+.curtain-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+  transition: color 0.3s;
+}
+
+.curtain-links a:hover {
+  color: var(--accent);
+}
+
+/* Show curtain menu when toggle is checked */
+.menu-toggle-cb:checked ~ .curtain-menu {
+  display: flex;
+}
+
 }
 
 @media (max-width: 640px) {
