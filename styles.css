@@ -669,6 +669,34 @@ footer {
 
 .modal-counter { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--muted); }
 
+.curtain-menu {
+  display: none;
+  padding: 1rem 4vw;
+  background: rgba(8,6,15,0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.curtain-menu a {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.curtain-menu a::after {
+  text-decoration: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  display: inline-flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -726,47 +754,53 @@ footer {
   }
 
   /* Curtain menu styles */
-.curtain-menu {
-  display: none;
-  position: fixed;
-  top: 7%;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: var(--surface);
-  z-index: 1000;
-  flex-direction: column;
-  align-items: center;
-}
+  .curtain-menu {
+    display: none;
+    position: fixed;
+    top: 7%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(8,6,15,0.82);
+    backdrop-filter: blur(16px);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 4vw;
+  }
 
-.curtain-links {
-  list-style: none;
-  padding: 3rem 0;
-  margin: 0;
-  text-align: center;
-}
+  .curtain-links {
+    list-style: none;
+    padding: 3rem 0;
+    margin: 0;
+    text-align: center;
+  }
 
-.curtain-links li {
-  margin: 1rem 0;
-}
+  .curtain-links li {
+    margin: 1rem 0;
+  }
 
-.curtain-links a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 1.5rem;
-  font-family: var(--font-display);
-  transition: color 0.3s;
-}
+  .curtain-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    transition: color 0.3s;
+  }
 
-.curtain-links a:hover {
-  color: var(--accent);
-}
+  .curtain-links a:hover {
+    color: var(--accent);
+  }
 
-/* Show curtain menu when toggle is checked */
-.menu-toggle-cb:checked ~ .curtain-menu {
-  display: flex;
-}
-
+  /* Show curtain menu when toggle is checked */
+  .menu-toggle-cb:checked ~ .curtain-menu {
+    display: flex;
+    padding: 1rem 4vw;
+    background: rgba(8,6,15,0.82);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
 }
 
 @media (max-width: 640px) {
