@@ -523,7 +523,7 @@ footer {
   border: 1px solid var(--border);
   width: 100%;
   max-width: 90svw;
-  max-height: 90svh;
+  max-height: 95svh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -631,7 +631,7 @@ footer {
   background-clip: text;
 }
 
-.slide-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; flex: 1; }
+.slide-desc { font-size: 1.1rem; color: var(--muted); line-height: 1.75; flex: 1; }
 
 /* ── Slide Links ── */
 .slide-links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
@@ -806,7 +806,7 @@ footer {
 @media (max-width: 640px) {
   .slide { grid-template-columns: 1fr; }
   .slide-img-wrap { min-height: 200px; max-height: 240px; }
-  .modal-box { max-height: 95svh; }
+  .modal-box { max-height: 80svh; }
   .modal-header { padding: 2.2rem 1.2rem 0.8rem; }
   .slide-body { padding: 1.2rem; }
   .modal-nav { padding: 0.8rem 1.2rem; }
