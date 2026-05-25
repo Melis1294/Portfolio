@@ -534,7 +534,7 @@ body.light-theme .project-card:hover .project-bg {
   width: 100%;
   height: 100%;
   background:
-    linear-gradient(135deg, transparent 10%, rgba(196,44,160,0.35), rgba(139,63,212,0.35), rgba(46,184,232,0.35)),
+    linear-gradient(135deg, transparent 10%, rgba(196,44,160,0.05), rgba(139,63,212,0.25), rgba(46,184,232,0.25)),
     linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
   z-index: 1;
   pointer-events: none;
