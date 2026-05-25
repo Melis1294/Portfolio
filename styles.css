@@ -741,7 +741,7 @@ footer {
 .modal-close:hover { color: var(--text); }
 
 /* ── Slide Content ── */
-.modal-slides { flex: 1; overflow-y: auto; }
+.modal-slides { flex: 1; overflow-y: auto; touch-action: pan-y; }
 
 .slide {
   display: grid;

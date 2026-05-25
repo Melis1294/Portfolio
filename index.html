@@ -323,6 +323,18 @@
     `;
   }
 
+  // Swipe logic
+  let touchStartX = 0;
+  modalSlides.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+  modalSlides.addEventListener('touchend', e => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) document.getElementById('next-btn').click();
+      else document.getElementById('prev-btn').click();
+    }
+  }, {passive: true});
+
   document.getElementById('prev-btn').addEventListener('click', () => {
     const p = PROJECTS[currentProject];
     currentSlide = (currentSlide - 1 + p.slides.length) % p.slides.length;
