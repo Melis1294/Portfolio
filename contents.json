@@ -156,6 +156,42 @@
       ]
     },
     {
+      "title": "SinchCup",
+      "year": 2022,
+      "slides": [
+        {
+          "title": "Thesis project",
+          "image": "images/facebookGame/1.png",
+          "description": "The following project was developed during my stage at the IT company: Orbyta. The goal of thesis was the creation of a networking platform on Unity that hosts social features. After a research, I found Facebook as the best candidate for the work."
+        },
+        {
+          "title": "First interaction with APIs",
+          "image": "images/facebookGame/2.png",
+          "description": "Facebook provided its own API that could be attached to Unity through a specific package. I had the chance to learn a range of API calls to start the login process to the social platform and to download and manage the data of the users."
+        },
+        {
+          "title": "A procedural world to explore",
+          "image": "images/facebookGame/4.png",
+          "description": "The thesis offered me the opportunity to focus on how to create a semi-procedural town from the user data. The world had a procedural part made with the houses of the Facebook friends while a semi-static part with a central square to visit, play games or meet other users."
+        },
+        {
+          "title": "Visit your Facebook friends",
+          "image": "images/facebookGame/5.gif",
+          "description": "Each Facebook friend, user included, had their own house in the game world, so you could visit it and interact with their feed on the wall."
+        },
+        {
+          "title": "The square",
+          "image": "images/facebookGame/6.gif",
+          "description": "The square in the middle provided some mini-games like bowling or obstacle course. The last one had competitive feature: indeed, it started a timer to finish the race and at the end it was displayed on a big leaderboard, to all the players."
+        },
+        {
+          "title": "Mirror Networking",
+          "image": "images/facebookGame/7.gif",
+          "description": "All of the online features were provided by Mirror Networking: a high level Networking API for Unity that provides different levels of transport. In this case it was used TCP on a specific port. Besides, the host was run on a Windows Server, on EC2 virtual machine, using Amazon Web Services. The players could connect via smartphone to the world, logging in with their Facebook account."
+        }
+      ]
+    },
+    {
       "title": "Basketball Challenge",
       "year": 2026,
       "slides": [
