@@ -15,19 +15,32 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="logo-link"><img src="./images/Vast LOGO_TRANSPARENT-00.png" alt="Vast Logo" class="nav-logo" /></a>
-    
-    <input type="checkbox" id="menu-toggle" class="menu-toggle-cb" />
-    <label for="menu-toggle" class="burger-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
 
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-right">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle-cb" />
+      <label for="menu-toggle" class="burger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Theme toggle switch -->
+      <label class="theme-switch" aria-label="Toggle light/dark theme">
+        <input type="checkbox" id="theme-toggle" class="theme-switch-cb" />
+        <span class="theme-track">
+          <span class="theme-thumb">
+            <img src="./images/Vast LOGO_TRANSPARENT-00.png" alt="theme icon" class="theme-thumb-logo" />
+          </span>
+          <span class="theme-label theme-label--dark">🌙</span>
+          <span class="theme-label theme-label--light">☀️</span>
+        </span>
+      </label>
+    </div>
   </nav>
 
   <!-- Curtain menu for mobile navigation -->
@@ -57,7 +70,7 @@
     function closeCurtainMenu() {
       menuToggle.checked = false;
       curtainMenu.classList.remove('is-open');
-      document.removeEventListener('click', handleOutsideClick); // 👈 add this
+      document.removeEventListener('click', handleOutsideClick);
     }
 
     function handleOutsideClick(e) {
@@ -68,6 +81,12 @@
         menuToggle.checked = false;
       }
     }
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('light-theme', themeToggle.checked);
+    });
   </script>
 
   <!-- HERO -->
@@ -94,11 +113,11 @@
       <div class="about-skills">
         <h2>Main skills</h2>
         <div class="skill-item"><span class="mono">01</span> Unity3D</div>
-        <div class="skill-item"><span class="mono">02</span> C# & C++ Scripting</div>
+        <div class="skill-item"><span class="mono">02</span> C# &amp; C++ Scripting</div>
         <div class="skill-item"><span class="mono">03</span> Game Design</div>
-        <div class="skill-item"><span class="mono">04</span> UI & Shader Graph</div>
-        <div class="skill-item"><span class="mono">05</span> Physics & Animation</div>
-        <div class="skill-item"><span class="mono">06</span> WebGL & Android Builds</div>
+        <div class="skill-item"><span class="mono">04</span> UI &amp; Shader Graph</div>
+        <div class="skill-item"><span class="mono">05</span> Physics &amp; Animation</div>
+        <div class="skill-item"><span class="mono">06</span> WebGL &amp; Android Builds</div>
       </div>
     </div>
   </section>
