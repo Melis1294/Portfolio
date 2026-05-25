@@ -46,15 +46,27 @@
 
     menuToggle.addEventListener('change', () => {
       if (menuToggle.checked) {
-        curtainMenu.style.display = 'flex';
+        curtainMenu.classList.add('is-open');
+        document.addEventListener('click', handleOutsideClick);
       } else {
-        curtainMenu.style.display = 'none';
+        curtainMenu.classList.remove('is-open');
+        document.removeEventListener('click', handleOutsideClick);
       }
     });
 
     function closeCurtainMenu() {
       menuToggle.checked = false;
-      curtainMenu.style.display = 'none';
+      curtainMenu.classList.remove('is-open');
+      document.removeEventListener('click', handleOutsideClick); // 👈 add this
+    }
+
+    function handleOutsideClick(e) {
+      const burgerBtn = document.querySelector('.burger-btn');
+      if (!curtainMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+        document.removeEventListener('click', handleOutsideClick);
+        curtainMenu.classList.remove('is-open');
+        menuToggle.checked = false;
+      }
     }
   </script>
 
