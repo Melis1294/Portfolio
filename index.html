@@ -237,6 +237,8 @@
     const card = document.createElement('article');
     card.className = 'project-card';
     card.innerHTML = `
+      <img class="project-bg" src="${p.slides[0].image}" alt="${p.title}" />
+      <div class="project-thumb-gradient"></div>
       <div class="project-number mono">${num}</div>
       <div class="project-info">
         <h3>${p.title}</h3>
